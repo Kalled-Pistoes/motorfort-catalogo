@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  /* Motorfort brand palette */
+  --color-brand-50:  #eff8ff;
+  --color-brand-100: #dcefff;
+  --color-brand-200: #b9dfff;
+  --color-brand-300: #86c8f7;
+  --color-brand-400: #2498cc;
+  --color-brand-500: #0b5ca8;
+  --color-brand-600: #07508f;
+  --color-brand-700: #073d68;
+  --color-brand-800: #0a3455;
+  --color-brand-900: #0c2c47;
+  --color-brand-950: #071c30;
+
+  --color-accent-400: #f7a94f;
+  --color-accent-500: #f28c28;
+  --color-accent-600: #d97706;
+  --color-success-500: #16a34a;
+  --color-danger-500: #dc2626;
+
+  --color-pbi-navy:  #0b1219;
+  --color-pbi-bg:    #101820;
+  --color-pbi-card:  rgba(24, 35, 46, 0.88);
+  --color-pbi-text:  #f4f7fa;
+  --color-pbi-text-muted: #a8b6c3;
+}
+
+@layer base {
+  body {
+    @apply bg-pbi-bg text-pbi-text font-sans antialiased selection:bg-brand-500/30;
+    background-image:
+      radial-gradient(at 0% 0%,   rgba(7, 90, 156, 0.16) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(36, 152, 204, 0.08) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  * {
+    @apply border-white/5;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-brand-400) !important;
+    outline-offset: 3px !important;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-pbi-card backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 shadow-2xl;
+  }
+
+  .card-premium {
+    @apply bg-pbi-card backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 shadow-2xl relative overflow-hidden;
+  }
+
+  .card-premium::before {
+    content: "";
+    @apply absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-white/5 to-transparent rotate-45 pointer-events-none;
+  }
+
+  .btn-primary {
+    @apply bg-brand-500 hover:bg-brand-400 text-white font-semibold px-4 py-2 rounded-xl transition-all shadow-lg active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply text-[#a0a0a8] hover:text-white hover:bg-white/5 px-3 py-2 rounded-xl transition-all;
+  }
+
+  .table-row-hover {
+    @apply hover:bg-white/5 transition-colors cursor-pointer;
+  }
+
+  .glass-header {
+    @apply bg-pbi-navy/80 backdrop-blur-md border-b border-white/5;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider;
+  }
+
+  .input {
+    @apply bg-[#111113]/60 border border-white/10 text-[#f0f0f0] rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent placeholder-[#555] w-full backdrop-blur-sm;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111113;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}

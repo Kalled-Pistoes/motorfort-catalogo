@@ -1,0 +1,16 @@
+Supabase.txt
+.env
+.env.local
+.env.*
+**/.env
+**/.env.*
+node_modules
+**/node_modules
+dist
+**/dist
+coverage
+**/coverage
+supabase/.temp
+*.xlsx
+*.xls
+*.log

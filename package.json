@@ -1,0 +1,23 @@
+{
+  "name": "motorfort-catalog",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm --prefix frontend install",
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint",
+    "test": "tsx --test api/_lib/auth.test.ts api/_lib/catalog/catalogImportService.test.ts api/_lib/catalog/normalizeCatalogRow.test.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.99.2",
+    "jszip": "^3.10.1",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@vercel/node": "^5.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.0.0"
+  }
+}

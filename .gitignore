@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Builds, caches and coverage
+dist/
+**/dist/
+.vite/
+**/.vite/
+coverage/
+**/coverage/
+supabase/.temp/
+
+# Local environment and credentials
+Supabase.txt
+.env
+.env.local
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+
+# Catalog files must not be committed
+*.xlsx
+*.xls
+~$*
+
+# Deployment and logs
+.vercel/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Temporary files
+*.tmp
+*.bak
+*.sw?
+
+# Operating system and editors
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/settings.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

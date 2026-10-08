@@ -7,7 +7,9 @@
     "dev": "npm --prefix frontend run dev",
     "build": "npm --prefix frontend run build",
     "lint": "npm --prefix frontend run lint",
-    "test": "tsx --test api/_lib/auth.test.ts api/_lib/catalog/catalogImportService.test.ts api/_lib/catalog/normalizeCatalogRow.test.ts"
+    "test": "npm run test:api && npm run test:frontend",
+    "test:api": "tsx --test api/_lib/auth.test.ts api/_lib/catalog/catalogImportService.test.ts api/_lib/catalog/normalizeCatalogRow.test.ts",
+    "test:frontend": "npm --prefix frontend test"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.99.2",
